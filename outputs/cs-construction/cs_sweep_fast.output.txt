@@ -1,0 +1,27 @@
+(n,m,s,r)      p     k   delta  | results
+------------------------------------------------------------------------------------------
+(12, 2, 6, 3) p=13  k=2 d=0.500 | #lam=1   #wits=2     #aligned=2     #NOT=0
+(12, 2, 6, 4) p=13  k=4 d=0.333 | #lam=6   #wits=6     #aligned=6     #NOT=0
+(12, 3, 4, 3) p=13  k=3 d=0.250 | #lam=0   #wits=0     #aligned=0     #NOT=0
+(24, 2,12, 3) p=73  k=2 d=0.750 | #lam=1   #wits=4     #aligned=4     #NOT=0
+  skip (24, 2, 12, 4): cost~5.0e+10
+  skip (24, 3, 8, 3): cost~6.8e+08
+(30, 2,15, 3) p=31  k=2 d=0.800 | #lam=16  #wits=20    #aligned=20    #NOT=0
+(30, 3,10, 3) p=31  k=3 d=0.700 | #lam=0   #wits=0     #aligned=0     #NOT=0
+(36, 2,18, 3) p=37  k=2 d=0.833 | #lam=37  #wits=60    #aligned=24    #NOT=36
+     NON-ALIGNED: lam=1 h=(26, 10) S=(8, 11, 12, 19, 20, 32)
+     NON-ALIGNED: lam=1 h=(26, 27) S=(1, 2, 14, 26, 29, 30)
+     NON-ALIGNED: lam=3 h=(36, 18) S=(9, 21, 24, 25, 32, 33)
+(36, 3,12, 3) p=37  k=3 d=0.750 | #lam=1   #wits=4     #aligned=4     #NOT=0
+  skip (36, 4, 9, 3): cost~2.5e+09
+(42, 2,21, 3) p=43  k=2 d=0.857 | #lam=22  #wits=70    #aligned=28    #NOT=42
+     NON-ALIGNED: lam=1 h=(4, 2) S=(8, 9, 19, 21, 23, 37)
+     NON-ALIGNED: lam=1 h=(4, 41) S=(0, 2, 16, 29, 30, 40)
+     NON-ALIGNED: lam=4 h=(41, 21) S=(4, 6, 8, 22, 35, 36)
+(42, 3,14, 3) p=43  k=3 d=0.786 | #lam=0   #wits=0     #aligned=0     #NOT=0
+(60, 2,30, 3) p=61  k=2 d=0.900 | #lam=61  #wits=310   #aligned=70    #NOT=240
+     NON-ALIGNED: lam=1 h=(38, 15) S=(3, 7, 34, 35, 46, 52)
+     NON-ALIGNED: lam=1 h=(38, 46) S=(4, 5, 16, 22, 33, 37)
+     NON-ALIGNED: lam=1 h=(58, 27) S=(6, 23, 26, 41, 44, 46)
+------------------------------------------------------------------------------------------
+TOTAL across sweep: 476 witnesses, 158 aligned, 318 NOT

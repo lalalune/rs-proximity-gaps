@@ -27,6 +27,12 @@ self-contained.
 
 ```
 rs-proximity-gaps/
+  lean/                      Merged Berlekamp / V_bad codim Lean branch
+    FRISoundness/Berlekamp/  Four combinatorial cores for paper 3 sections 4-5
+    lakefile.toml, lean-toolchain
+  scripts/                   Merged companion Python scripts for the flattened tree
+  outputs/                   Saved outputs for the flattened companion tree
+
   paper1/
     paper.pdf                  Paper 1 manuscript
     PROOF_CHAIN.md             Step-by-step trace of Paper 1's main theorem
@@ -61,12 +67,16 @@ rs-proximity-gaps/
 
 ## Quick start
 
-**Build the Lean formalization** (Paper 1):
+**Build the Lean formalizations**:
 
 ```bash
 cd paper1/lean
 lake exe cache get   # download Mathlib cache (~5 min)
 lake build           # builds FRISoundness (zero `sorry`)
+
+cd ../../lean
+lake exe cache get
+lake build FRISoundness.Berlekamp  # builds the merged Berlekamp / V_bad codim tree
 ```
 
 **Run a verification script**:
@@ -74,6 +84,7 @@ lake build           # builds FRISoundness (zero `sorry`)
 ```bash
 python3 paper1/scripts/op1-barrier/op1_scaling.py
 python3 paper2/scripts/deployment-l3/issue419_action_orbit_check.py
+python3 scripts/op1-barrier/op1_scaling.py
 ```
 
 **Regenerate Paper 1's deployment-parameter table or proximity-gap figure**:
@@ -89,8 +100,8 @@ pre-computed) mirror the scripts layout under `paper1/outputs/`; redirect
 stdout to refresh, e.g.
 `python3 .../op1_scaling.py > paper1/outputs/op1-barrier/op1_scaling.output.txt`.
 
-The CI workflow (`.github/workflows/ci.yml`) runs `lake build` and a sample
-of Python scripts on every push.
+The CI workflow (`.github/workflows/ci.yml`) runs `lake build` for both Lean
+trees and a sample of Python scripts on every push.
 
 ---
 

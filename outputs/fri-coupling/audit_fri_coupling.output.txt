@@ -1,0 +1,308 @@
+======================================================================
+FRI FOLDING COUPLING AUDIT
+How error structure affects even/odd proximity after decomposition
+======================================================================
+
+
+### EXPERIMENT 1: n=32, k=8, delta=0.5 (16 errors) ###
+======================================================================
+Parameters: n=32, K=5, p=257, k=8, k2=4, rho=0.2500
+  delta=0.5000, num_errors=16
+  Johnson bound = 0.5000
+  Unique decoding = 0.3750
+  Capacity = 0.7500
+  delta/2 = 0.2500
+======================================================================
+
+--- Construction: UNPAIRED ---
+  actual errors: 16/32  (target 16)
+  wt(e_even) = 16/16,  wt(e_odd) = 16/16
+  Delta(f_even, g_even)  = 1.0000  [to planted]
+  Delta(f_odd,  g_odd)   = 1.0000  [to planted]
+  Delta(f_even, RS_4) = 1.0000  [to nearest, DFT proj]
+  Delta(f_odd,  RS_4) = 1.0000  [to nearest, DFT proj]
+  max(D_even_min, D_odd_min) = 1.0000
+  delta/2 = 0.2500
+  max > delta/2 ? True
+  min_alpha Delta(fold, RS_4) = 0.9375
+  #alpha with Delta(fold, RS_4) <= delta:   0/257
+  #alpha with Delta(fold, RS_4) <= delta/2: 0/257
+
+--- Construction: PAIRED(sym) ---
+  actual errors: 16/32  (target 16)
+  wt(e_even) = 8/16,  wt(e_odd) = 0/16
+  Delta(f_even, g_even)  = 0.5000  [to planted]
+  Delta(f_odd,  g_odd)   = 0.0000  [to planted]
+  Delta(f_even, RS_4) = 1.0000  [to nearest, DFT proj]
+  Delta(f_odd,  RS_4) = 0.0000  [to nearest, DFT proj]
+  max(D_even_min, D_odd_min) = 1.0000
+  delta/2 = 0.2500
+  max > delta/2 ? True
+  min_alpha Delta(fold, RS_4) = 1.0000
+  #alpha with Delta(fold, RS_4) <= delta:   0/257
+  #alpha with Delta(fold, RS_4) <= delta/2: 0/257
+
+--- Construction: PAIRED(anti) ---
+  actual errors: 16/32  (target 16)
+  wt(e_even) = 0/16,  wt(e_odd) = 8/16
+  Delta(f_even, g_even)  = 0.0000  [to planted]
+  Delta(f_odd,  g_odd)   = 0.5000  [to planted]
+  Delta(f_even, RS_4) = 0.0000  [to nearest, DFT proj]
+  Delta(f_odd,  RS_4) = 1.0000  [to nearest, DFT proj]
+  max(D_even_min, D_odd_min) = 1.0000
+  delta/2 = 0.2500
+  max > delta/2 ? True
+  min_alpha Delta(fold, RS_4) = 0.0000
+  #alpha with Delta(fold, RS_4) <= delta:   1/257
+  #alpha with Delta(fold, RS_4) <= delta/2: 1/257
+
+======================================================================
+SUMMARY
+======================================================================
+                                        UNPAIRED   PAIRED(sym)  PAIRED(anti)
+  wt(e_even)                                  16             8             0
+  wt(e_odd)                                   16             0             8
+  D(f_even, g_even)                       1.0000        0.5000        0.0000
+  D(f_odd, g_odd)                         1.0000        0.0000        0.5000
+  D(f_even, RS) min                       1.0000        1.0000        0.0000
+  D(f_odd, RS) min                        1.0000        0.0000        1.0000
+  min_a D(fold, RS)                       0.9375        1.0000        0.0000
+  #a fold<=delta                               0             0             1
+  #a fold<=delta/2                             0             0             1
+  n/(2t') prediction                         2.00
+  delta                                    0.5000
+  delta/2                                  0.2500
+
+
+
+### EXPERIMENT 2: n=32, k=4, delta=0.4375 (14 errors) ###
+======================================================================
+Parameters: n=32, K=5, p=257, k=4, k2=2, rho=0.1250
+  delta=0.4375, num_errors=14
+  Johnson bound = 0.6464
+  Unique decoding = 0.4375
+  Capacity = 0.8750
+  delta/2 = 0.2188
+======================================================================
+
+--- Construction: UNPAIRED ---
+  actual errors: 14/32  (target 14)
+  wt(e_even) = 14/16,  wt(e_odd) = 14/16
+  Delta(f_even, g_even)  = 0.8750  [to planted]
+  Delta(f_odd,  g_odd)   = 0.8750  [to planted]
+  Delta(f_even, RS_2) = 1.0000  [to nearest, DFT proj]
+  Delta(f_odd,  RS_2) = 1.0000  [to nearest, DFT proj]
+  max(D_even_min, D_odd_min) = 1.0000
+  delta/2 = 0.2188
+  max > delta/2 ? True
+  min_alpha Delta(fold, RS_2) = 0.8750
+  #alpha with Delta(fold, RS_2) <= delta:   0/257
+  #alpha with Delta(fold, RS_2) <= delta/2: 0/257
+
+--- Construction: PAIRED(sym) ---
+  actual errors: 14/32  (target 14)
+  wt(e_even) = 7/16,  wt(e_odd) = 0/16
+  Delta(f_even, g_even)  = 0.4375  [to planted]
+  Delta(f_odd,  g_odd)   = 0.0000  [to planted]
+  Delta(f_even, RS_2) = 1.0000  [to nearest, DFT proj]
+  Delta(f_odd,  RS_2) = 0.0000  [to nearest, DFT proj]
+  max(D_even_min, D_odd_min) = 1.0000
+  delta/2 = 0.2188
+  max > delta/2 ? True
+  min_alpha Delta(fold, RS_2) = 1.0000
+  #alpha with Delta(fold, RS_2) <= delta:   0/257
+  #alpha with Delta(fold, RS_2) <= delta/2: 0/257
+
+--- Construction: PAIRED(anti) ---
+  actual errors: 14/32  (target 14)
+  wt(e_even) = 0/16,  wt(e_odd) = 7/16
+  Delta(f_even, g_even)  = 0.0000  [to planted]
+  Delta(f_odd,  g_odd)   = 0.4375  [to planted]
+  Delta(f_even, RS_2) = 0.0000  [to nearest, DFT proj]
+  Delta(f_odd,  RS_2) = 0.9375  [to nearest, DFT proj]
+  max(D_even_min, D_odd_min) = 0.9375
+  delta/2 = 0.2188
+  max > delta/2 ? True
+  min_alpha Delta(fold, RS_2) = 0.0000
+  #alpha with Delta(fold, RS_2) <= delta:   1/257
+  #alpha with Delta(fold, RS_2) <= delta/2: 1/257
+
+======================================================================
+SUMMARY
+======================================================================
+                                        UNPAIRED   PAIRED(sym)  PAIRED(anti)
+  wt(e_even)                                  14             7             0
+  wt(e_odd)                                   14             0             7
+  D(f_even, g_even)                       0.8750        0.4375        0.0000
+  D(f_odd, g_odd)                         0.8750        0.0000        0.4375
+  D(f_even, RS) min                       1.0000        1.0000        0.0000
+  D(f_odd, RS) min                        1.0000        0.0000        0.9375
+  min_a D(fold, RS)                       0.8750        1.0000        0.0000
+  #a fold<=delta                               0             0             1
+  #a fold<=delta/2                             0             0             1
+  n/(2t') prediction                         1.55
+  delta                                    0.4375
+  delta/2                                  0.2188
+
+
+
+### EXPERIMENT 3: n=64, k=8, delta=0.5 (32 errors) ###
+======================================================================
+Parameters: n=64, K=6, p=449, k=8, k2=4, rho=0.1250
+  delta=0.5000, num_errors=32
+  Johnson bound = 0.6464
+  Unique decoding = 0.4375
+  Capacity = 0.8750
+  delta/2 = 0.2500
+======================================================================
+
+--- Construction: UNPAIRED ---
+  actual errors: 32/64  (target 32)
+  wt(e_even) = 32/32,  wt(e_odd) = 32/32
+  Delta(f_even, g_even)  = 1.0000  [to planted]
+  Delta(f_odd,  g_odd)   = 1.0000  [to planted]
+  Delta(f_even, RS_4) = 1.0000  [to nearest, DFT proj]
+  Delta(f_odd,  RS_4) = 1.0000  [to nearest, DFT proj]
+  max(D_even_min, D_odd_min) = 1.0000
+  delta/2 = 0.2500
+  max > delta/2 ? True
+  min_alpha Delta(fold, RS_4) = 0.9375
+  #alpha with Delta(fold, RS_4) <= delta:   0/449
+  #alpha with Delta(fold, RS_4) <= delta/2: 0/449
+
+--- Construction: PAIRED(sym) ---
+  actual errors: 32/64  (target 32)
+  wt(e_even) = 16/32,  wt(e_odd) = 0/32
+  Delta(f_even, g_even)  = 0.5000  [to planted]
+  Delta(f_odd,  g_odd)   = 0.0000  [to planted]
+  Delta(f_even, RS_4) = 1.0000  [to nearest, DFT proj]
+  Delta(f_odd,  RS_4) = 0.0000  [to nearest, DFT proj]
+  max(D_even_min, D_odd_min) = 1.0000
+  delta/2 = 0.2500
+  max > delta/2 ? True
+  min_alpha Delta(fold, RS_4) = 1.0000
+  #alpha with Delta(fold, RS_4) <= delta:   0/449
+  #alpha with Delta(fold, RS_4) <= delta/2: 0/449
+
+--- Construction: PAIRED(anti) ---
+  actual errors: 32/64  (target 32)
+  wt(e_even) = 0/32,  wt(e_odd) = 16/32
+  Delta(f_even, g_even)  = 0.0000  [to planted]
+  Delta(f_odd,  g_odd)   = 0.5000  [to planted]
+  Delta(f_even, RS_4) = 0.0000  [to nearest, DFT proj]
+  Delta(f_odd,  RS_4) = 1.0000  [to nearest, DFT proj]
+  max(D_even_min, D_odd_min) = 1.0000
+  delta/2 = 0.2500
+  max > delta/2 ? True
+  min_alpha Delta(fold, RS_4) = 0.0000
+  #alpha with Delta(fold, RS_4) <= delta:   1/449
+  #alpha with Delta(fold, RS_4) <= delta/2: 1/449
+
+======================================================================
+SUMMARY
+======================================================================
+                                        UNPAIRED   PAIRED(sym)  PAIRED(anti)
+  wt(e_even)                                  32            16             0
+  wt(e_odd)                                   32             0            16
+  D(f_even, g_even)                       1.0000        0.5000        0.0000
+  D(f_odd, g_odd)                         1.0000        0.0000        0.5000
+  D(f_even, RS) min                       1.0000        1.0000        0.0000
+  D(f_odd, RS) min                        1.0000        0.0000        1.0000
+  min_a D(fold, RS)                       0.9375        1.0000        0.0000
+  #a fold<=delta                               0             0             1
+  #a fold<=delta/2                             0             0             1
+  n/(2t') prediction                         1.55
+  delta                                    0.5000
+  delta/2                                  0.2500
+
+
+
+### EXPERIMENT 4: n=64, k=8, delta=0.3125 (20 errors) ###
+======================================================================
+Parameters: n=64, K=6, p=449, k=8, k2=4, rho=0.1250
+  delta=0.3125, num_errors=20
+  Johnson bound = 0.6464
+  Unique decoding = 0.4375
+  Capacity = 0.8750
+  delta/2 = 0.1562
+======================================================================
+
+--- Construction: UNPAIRED ---
+  actual errors: 20/64  (target 20)
+  wt(e_even) = 20/32,  wt(e_odd) = 20/32
+  Delta(f_even, g_even)  = 0.6250  [to planted]
+  Delta(f_odd,  g_odd)   = 0.6250  [to planted]
+  Delta(f_even, RS_4) = 1.0000  [to nearest, DFT proj]
+  Delta(f_odd,  RS_4) = 1.0000  [to nearest, DFT proj]
+  max(D_even_min, D_odd_min) = 1.0000
+  delta/2 = 0.1562
+  max > delta/2 ? True
+  min_alpha Delta(fold, RS_4) = 0.9375
+  #alpha with Delta(fold, RS_4) <= delta:   0/449
+  #alpha with Delta(fold, RS_4) <= delta/2: 0/449
+
+--- Construction: PAIRED(sym) ---
+  actual errors: 20/64  (target 20)
+  wt(e_even) = 10/32,  wt(e_odd) = 0/32
+  Delta(f_even, g_even)  = 0.3125  [to planted]
+  Delta(f_odd,  g_odd)   = 0.0000  [to planted]
+  Delta(f_even, RS_4) = 1.0000  [to nearest, DFT proj]
+  Delta(f_odd,  RS_4) = 0.0000  [to nearest, DFT proj]
+  max(D_even_min, D_odd_min) = 1.0000
+  delta/2 = 0.1562
+  max > delta/2 ? True
+  min_alpha Delta(fold, RS_4) = 1.0000
+  #alpha with Delta(fold, RS_4) <= delta:   0/449
+  #alpha with Delta(fold, RS_4) <= delta/2: 0/449
+
+--- Construction: PAIRED(anti) ---
+  actual errors: 20/64  (target 20)
+  wt(e_even) = 0/32,  wt(e_odd) = 10/32
+  Delta(f_even, g_even)  = 0.0000  [to planted]
+  Delta(f_odd,  g_odd)   = 0.3125  [to planted]
+  Delta(f_even, RS_4) = 0.0000  [to nearest, DFT proj]
+  Delta(f_odd,  RS_4) = 1.0000  [to nearest, DFT proj]
+  max(D_even_min, D_odd_min) = 1.0000
+  delta/2 = 0.1562
+  max > delta/2 ? True
+  min_alpha Delta(fold, RS_4) = 0.0000
+  #alpha with Delta(fold, RS_4) <= delta:   1/449
+  #alpha with Delta(fold, RS_4) <= delta/2: 1/449
+
+======================================================================
+SUMMARY
+======================================================================
+                                        UNPAIRED   PAIRED(sym)  PAIRED(anti)
+  wt(e_even)                                  20            10             0
+  wt(e_odd)                                   20             0            10
+  D(f_even, g_even)                       0.6250        0.3125        0.0000
+  D(f_odd, g_odd)                         0.6250        0.0000        0.3125
+  D(f_even, RS) min                       1.0000        1.0000        0.0000
+  D(f_odd, RS) min                        1.0000        0.0000        1.0000
+  min_a D(fold, RS)                       0.9375        1.0000        0.0000
+  #a fold<=delta                               0             0             1
+  #a fold<=delta/2                             0             0             1
+  n/(2t') prediction                         1.55
+  delta                                    0.3125
+  delta/2                                  0.1562
+
+
+======================================================================
+KEY QUESTION: When Delta(f, RS_k) = delta,
+does max(Delta_even, Delta_odd) > delta/2 ALWAYS hold?
+
+Theory prediction:
+  UNPAIRED: errors spread to BOTH even and odd
+    => both f_even and f_odd are far from RS_{k/2}
+  PAIRED(sym): e(x)=e(-x) => e_even has full error, e_odd=0
+    => f_even is far, f_odd is IN RS_{k/2} (worst case!)
+  PAIRED(anti): e(x)=-e(-x) => e_even=0, e_odd has full error
+    => f_even is IN RS_{k/2}, f_odd is far
+
+For FRI soundness: PAIRED(sym) is the critical case.
+When f_odd = g_odd (a codeword), the fold f_even + alpha*f_odd
+only varies by alpha*(codeword), so proximity of fold to RS_{k/2}
+equals proximity of f_even + alpha*g_odd to RS_{k/2}.
+Since g_odd is in RS_{k/2}, this = proximity of f_even to RS_{k/2}.
+So ALL alpha give the same distance! The fold gives no randomness.
+======================================================================

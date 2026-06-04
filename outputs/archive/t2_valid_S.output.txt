@@ -1,0 +1,45 @@
+
+=== n=36, p=73, w=x^6+x^5 ===
+  #rich (h0,h1) = 0
+  #valid S = 0
+  #orbits under (Z/nZ)*: 0
+  #unique difference sets: 0
+  Rich h1 values (0): []
+
+=== n=60, p=181, w=x^6+x^5 ===
+  #rich (h0,h1) = 11
+  #valid S = 11
+  #orbits under (Z/nZ)*: 5
+    orbit size 2: rep=(8, 20, 30, 32, 44, 56)
+    orbit size 2: rep=(3, 15, 27, 30, 39, 51)
+    orbit size 4: rep=(5, 17, 29, 30, 41, 53)
+    orbit size 2: rep=(2, 14, 26, 30, 38, 50)
+    orbit size 1: rep=(0, 12, 24, 30, 36, 48)
+  #unique difference sets: 6
+  Rich h1 values (11): [1, 7, 19, 26, 48, 49, 132, 133, 155, 162, 174]
+  #distinct h1 ratios: 11 (out of C(11,2)=55)
+  DFT of S=(0, 12, 24, 30, 36, 48):
+    p_0 = 6  (expected: 6)
+    p_1 = 180  (expected: 180)
+    p_2 = 1  (expected: 1)
+    p_3 = 180  (expected: 180)
+    p_4 = 1  (expected: 1)
+    p_5 = 4
+    p_6 = 1
+    p_7 = 180
+
+=== n=120, p=241, w=x^6+x^5 ===
+  #rich (h0,h1) = 24
+  #valid S = 24
+  #orbits under (Z/nZ)*: 8
+    orbit size 4: rep=(14, 38, 60, 62, 86, 110)
+    orbit size 1: rep=(3, 19, 23, 93, 97, 113)
+    orbit size 2: rep=(20, 44, 60, 68, 92, 116)
+    orbit size 4: rep=(3, 27, 51, 60, 75, 99)
+    orbit size 8: rep=(11, 35, 59, 60, 83, 107)
+    orbit size 2: rep=(16, 40, 60, 64, 88, 112)
+    orbit size 2: rep=(18, 42, 60, 66, 90, 114)
+    orbit size 1: rep=(0, 24, 48, 60, 72, 96)
+  #unique difference sets: 13
+  Rich h1 values (24): [1, 2, 4, 8, 15, 16, 30, 32, 58, 60, 64, 113, 120, 121, 128, 177, 181, 209, 211, 225]...
+  #distinct h1 ratios: 46 (out of C(24,2)=276)

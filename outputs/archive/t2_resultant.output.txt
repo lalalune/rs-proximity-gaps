@@ -1,0 +1,78 @@
+
+=== n=12, p=13, ratio=1 ===
+
+  w = x^6 + 0*x^5:
+    #rich points (agree≥6): 2
+    max agreement: 6
+    Agreement profiles (top 10):
+      (2, 2, 2, 1, 1, 1, 1, 1, 1): 12 h1-values
+      (6, 6): 1 h1-values
+    t-rich locus size: 2
+    h1 distribution: [2]
+    max agree: 6
+
+  w = x^6 + 1*x^5:
+    #rich points (agree≥6): 0
+    Agreement profiles (top 10):
+      (2, 2, 2, 1, 1, 1, 1, 1, 1): 5 h1-values
+      (4, 2, 2, 2, 2): 2 h1-values
+      (2, 2, 1, 1, 1, 1, 1, 1, 1, 1): 2 h1-values
+      (2, 2, 2, 2, 2, 1, 1): 1 h1-values
+      (2, 2, 2, 2, 2, 2): 1 h1-values
+      (4, 3, 2, 1, 1, 1): 1 h1-values
+      (3, 2, 2, 2, 1, 1, 1): 1 h1-values
+    t-rich locus size: 0
+
+=== n=12, p=37, ratio=3 ===
+
+  w = x^6 + 0*x^5:
+    #rich points (agree≥6): 2
+    max agreement: 6
+    Agreement profiles (top 10):
+      (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 12 h1-values
+      (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 12 h1-values
+      (2, 2, 1, 1, 1, 1, 1, 1, 1, 1): 12 h1-values
+      (6, 6): 1 h1-values
+    t-rich locus size: 2
+    h1 distribution: [2]
+    max agree: 6
+
+  w = x^6 + 1*x^5:
+    #rich points (agree≥6): 0
+    Agreement profiles (top 10):
+      (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 14 h1-values
+      (2, 2, 1, 1, 1, 1, 1, 1, 1, 1): 9 h1-values
+      (1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 8 h1-values
+      (2, 2, 2, 2, 1, 1, 1, 1): 3 h1-values
+      (2, 2, 2, 2, 2, 2): 2 h1-values
+      (4, 2, 2, 2, 2): 1 h1-values
+    t-rich locus size: 0
+
+=== n=24, p=73, ratio=3 ===
+
+  w = x^6 + 0*x^5:
+    #rich points (agree≥6): 4
+    max agreement: 6
+    Agreement profiles (top 10):
+      (2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 24 h1-values
+      (2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 24 h1-values
+      (2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 24 h1-values
+      (6, 6, 6, 6): 1 h1-values
+    t-rich locus size: 4
+    h1 distribution: [4]
+    max agree: 6
+
+  w = x^6 + 1*x^5:
+    #rich points (agree≥6): 0
+    Agreement profiles (top 10):
+      (2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 20 h1-values
+      (2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 13 h1-values
+      (2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 11 h1-values
+      (2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 9 h1-values
+      (2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 9 h1-values
+      (3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1): 4 h1-values
+      (3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 3 h1-values
+      (3, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 1 h1-values
+      (4, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1): 1 h1-values
+      (3, 3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1): 1 h1-values
+    t-rich locus size: 0

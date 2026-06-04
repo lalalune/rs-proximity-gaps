@@ -1,0 +1,93 @@
+=== S3: Characteristic 2 test ===
+threshold t_agree=6
+
+--- F_{2^8}, |F*| = 255 ---
+  n=15:
+  F_{2^8}, |F*|=255, n=15, (|F*|/n)=17, omega=225
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=3.0
+    (6,5): max_M=2, max_NOT=2, total=14, NOT=14, n/5=3.0
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=3.0
+  n=17:
+  F_{2^8}, |F*|=255, n=17, (|F*|/n)=15, omega=53
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=3.4
+    (6,5): max_M=0, max_NOT=0, total=0, NOT=0, n/5=3.4
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=3.4
+  n=51:
+  F_{2^8}, |F*|=255, n=51, (|F*|/n)=5, omega=51
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=10.2
+    (6,5): max_M=0, max_NOT=0, total=0, NOT=0, n/5=10.2
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=10.2
+  n=85:
+  F_{2^8}, |F*|=255, n=85, (|F*|/n)=3, omega=15
+    (6,4): max_M=1, max_NOT=1, total=63, NOT=63, n/5=17.0
+    (6,5): max_M=16, max_NOT=16, total=576, NOT=576, n/5=17.0
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=17.0
+
+--- F_{2^12}, |F*| = 4095 ---
+  n=13:
+  F_{2^12}, |F*|=4095, n=13, (|F*|/n)=315, omega=3128
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=2.6
+    (6,5): max_M=0, max_NOT=0, total=0, NOT=0, n/5=2.6
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=2.6
+  n=21:
+  F_{2^12}, |F*|=4095, n=21, (|F*|/n)=195, omega=3035
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=4.2
+    (6,5): max_M=0, max_NOT=0, total=0, NOT=0, n/5=4.2
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=4.2
+  n=35:
+  F_{2^12}, |F*|=4095, n=35, (|F*|/n)=117, omega=2249
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=7.0
+    (6,5): max_M=0, max_NOT=0, total=0, NOT=0, n/5=7.0
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=7.0
+  n=45:
+  F_{2^12}, |F*|=4095, n=45, (|F*|/n)=91, omega=167
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=9.0
+    (6,5): max_M=0, max_NOT=0, total=0, NOT=0, n/5=9.0
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=9.0
+  n=63:
+  F_{2^12}, |F*|=4095, n=63, (|F*|/n)=65, omega=1831
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=12.6
+    (6,5): max_M=0, max_NOT=0, total=0, NOT=0, n/5=12.6
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=12.6
+  n=65:
+  F_{2^12}, |F*|=4095, n=65, (|F*|/n)=63, omega=1498
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=13.0
+    (6,5): max_M=0, max_NOT=0, total=0, NOT=0, n/5=13.0
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=13.0
+  n=91:
+  F_{2^12}, |F*|=4095, n=91, (|F*|/n)=45, omega=2063
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=18.2
+    (6,5): max_M=0, max_NOT=0, total=0, NOT=0, n/5=18.2
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=18.2
+
+--- F_{2^16}, |F*| = 65535 ---
+  n=15:
+  F_{2^16}, |F*|=65535, n=15, (|F*|/n)=4369, omega=36767
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=3.0
+    (6,5): max_M=2, max_NOT=2, total=2, NOT=2, n/5=3.0
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=3.0
+  n=17:
+  F_{2^16}, |F*|=65535, n=17, (|F*|/n)=3855, omega=32397
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=3.4
+    (6,5): max_M=0, max_NOT=0, total=0, NOT=0, n/5=3.4
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=3.4
+  n=51:
+  F_{2^16}, |F*|=65535, n=51, (|F*|/n)=1285, omega=42777
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=10.2
+    (6,5): max_M=0, max_NOT=0, total=0, NOT=0, n/5=10.2
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=10.2
+  n=85:
+  F_{2^16}, |F*|=65535, n=85, (|F*|/n)=771, omega=39000
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=17.0
+    (6,5): max_M=16, max_NOT=16, total=16, NOT=16, n/5=17.0
+    (7,6): max_M=0, max_NOT=0, total=0, NOT=0, n/5=17.0
+  n=255:
+  F_{2^16}, |F*|=65535, n=255, (|F*|/n)=257, omega=61715
+    (6,4): max_M=1020, max_NOT=1020, total=1102, NOT=1102, n/5=51.0
+    (6,5): max_M=1020, max_NOT=1020, total=1130, NOT=1130, n/5=51.0
+    (7,6): max_M=510, max_NOT=510, total=520, NOT=520, n/5=51.0
+  n=257:
+  F_{2^16}, |F*|=65535, n=257, (|F*|/n)=255, omega=53174
+    (6,4): max_M=0, max_NOT=0, total=0, NOT=0, n/5=51.4
+    (6,5): max_M=2, max_NOT=2, total=28, NOT=28, n/5=51.4
+    (7,6): max_M=1, max_NOT=1, total=4, NOT=4, n/5=51.4

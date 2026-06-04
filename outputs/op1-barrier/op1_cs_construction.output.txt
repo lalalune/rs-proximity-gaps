@@ -1,0 +1,106 @@
+======================================================================
+CS construction verification for OP1 disproof at n = 32, 64
+======================================================================
+
+[A] Sanity: n=10, k=6, p=11, s=10, r=7, m=1, w=3
+
+CS-style construction:
+  n=10, k=6, p=11, r=7, s=10, m=1, w=3
+  ρ=0.6000, δ_J=0.2254, δ=0.3000
+  f1 = X^7|_L,  f2 = X^6|_L
+  Predicted bad γ's: γ_j = -ω^{1j} for j=0..9
+  Predicted γ values (first 10): [10, 9, 7, 3, 6, 1, 2, 4, 8, 5]
+
+  Verifying Δ(f1, C):
+    dist(f1, C) ≤ 3? True (witness size 3), elapsed 0.0s
+  Verifying Δ(f2, C):
+    dist(f2, C) ≤ 3? False (witness size None), elapsed 0.0s
+
+  Verifying each predicted bad γ:
+    γ_0 = 10: dist ≤ 3? ✓ (witness size 3), elapsed 0.0s
+    γ_1 = 9: dist ≤ 3? ✓ (witness size 3), elapsed 0.0s
+    γ_2 = 7: dist ≤ 3? ✓ (witness size 3), elapsed 0.0s
+    γ_3 = 3: dist ≤ 3? ✓ (witness size 3), elapsed 0.0s
+    γ_4 = 6: dist ≤ 3? ✓ (witness size 3), elapsed 0.0s
+    γ_5 = 1: dist ≤ 3? ✓ (witness size 3), elapsed 0.0s
+    γ_6 = 2: dist ≤ 3? ✓ (witness size 3), elapsed 0.0s
+    γ_7 = 4: dist ≤ 3? ✓ (witness size 3), elapsed 0.0s
+    γ_8 = 8: dist ≤ 3? ✓ (witness size 3), elapsed 0.0s
+    γ_9 = 5: dist ≤ 3? ✓ (witness size 3), elapsed 0.0s
+
+  Confirmed bad γ's: 10/10 predicted
+
+[B] Target: n=16, k=9, p=97, s=16, r=10, m=1, w=6 (CS rate slightly above 1/2)
+
+CS-style construction:
+  n=16, k=9, p=97, r=10, s=16, m=1, w=6
+  ρ=0.5625, δ_J=0.2500, δ=0.3750
+  f1 = X^10|_L,  f2 = X^9|_L
+  Predicted bad γ's: γ_j = -ω^{1j} for j=0..15
+  Predicted γ values (first 10): [96, 89, 33, 70, 75, 18, 47, 85, 1, 8]
+
+  Verifying Δ(f1, C):
+    dist(f1, C) ≤ 6? True (witness size 6), elapsed 0.2s
+  Verifying Δ(f2, C):
+    dist(f2, C) ≤ 6? False (witness size None), elapsed 0.6s
+
+  Verifying each predicted bad γ:
+    γ_0 = 96: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_1 = 89: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_2 = 33: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_3 = 70: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_4 = 75: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_5 = 18: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_6 = 47: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_7 = 85: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_8 = 1: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_9 = 8: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_10 = 64: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_11 = 27: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_12 = 22: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_13 = 79: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_14 = 50: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+    γ_15 = 12: dist ≤ 6? ✓ (witness size 6), elapsed 0.2s
+
+  Confirmed bad γ's: 16/16 predicted
+
+[C] Counter-test: n=16, k=8, p=97, s=16, r=10, m=1, w=6 (true rate 1/2; expect 0/16)
+
+CS-style construction:
+  n=16, k=8, p=97, r=10, s=16, m=1, w=6
+  ρ=0.5000, δ_J=0.2929, δ=0.3750
+  f1 = X^10|_L,  f2 = X^9|_L
+  Predicted bad γ's: γ_j = -ω^{1j} for j=0..15
+  Predicted γ values (first 10): [96, 89, 33, 70, 75, 18, 47, 85, 1, 8]
+
+  Verifying Δ(f1, C):
+    dist(f1, C) ≤ 6? False (witness size None), elapsed 0.6s
+  Verifying Δ(f2, C):
+    dist(f2, C) ≤ 6? False (witness size None), elapsed 0.6s
+
+  Verifying each predicted bad γ:
+    γ_0 = 96: dist ≤ 6? ✗ (witness size None), elapsed 0.6s
+    γ_1 = 89: dist ≤ 6? ✗ (witness size None), elapsed 0.7s
+    γ_2 = 33: dist ≤ 6? ✗ (witness size None), elapsed 0.6s
+    γ_3 = 70: dist ≤ 6? ✗ (witness size None), elapsed 0.7s
+    γ_4 = 75: dist ≤ 6? ✗ (witness size None), elapsed 0.7s
+    γ_5 = 18: dist ≤ 6? ✗ (witness size None), elapsed 0.7s
+    γ_6 = 47: dist ≤ 6? ✗ (witness size None), elapsed 0.7s
+    γ_7 = 85: dist ≤ 6? ✗ (witness size None), elapsed 0.7s
+    γ_8 = 1: dist ≤ 6? ✗ (witness size None), elapsed 0.7s
+    γ_9 = 8: dist ≤ 6? ✗ (witness size None), elapsed 0.7s
+    γ_10 = 64: dist ≤ 6? ✗ (witness size None), elapsed 0.7s
+    γ_11 = 27: dist ≤ 6? ✗ (witness size None), elapsed 0.7s
+    γ_12 = 22: dist ≤ 6? ✗ (witness size None), elapsed 0.7s
+    γ_13 = 79: dist ≤ 6? ✗ (witness size None), elapsed 0.7s
+    γ_14 = 50: dist ≤ 6? ✗ (witness size None), elapsed 0.7s
+    γ_15 = 12: dist ≤ 6? ✗ (witness size None), elapsed 0.7s
+
+  Confirmed bad γ's: 0/16 predicted
+
+======================================================================
+SUMMARY
+======================================================================
+  n=10, k=6, p=11, w=3: confirmed 10/10 bad γ's, ε_ca ≥ 0.9091
+  n=16, k=9, p=97, w=6: confirmed 16/16 bad γ's, ε_ca ≥ 0.1649
+  n=16, k=8, p=97, w=6: confirmed 0/16 bad γ's, ε_ca ≥ 0.0000

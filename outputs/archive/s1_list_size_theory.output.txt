@@ -1,0 +1,73 @@
+=== Plotkin-type list size bounds ===
+
+                case        n    k      t        δ    M_bound    ⌊M⌋
+----------------------------------------------------------------------
+             CS n=36       36    2      6   0.8333          ∞      ∞
+             CS n=60       60    2      6   0.9000          ∞      ∞
+             CS n=72       72    2      6   0.9167          ∞      ∞
+            CS n=120      120    2      6   0.9500          ∞      ∞
+            CS n=360      360    2      6   0.9833          ∞      ∞
+           CS n=1000     1000    2      6   0.9940          ∞      ∞
+     FRI-like n=2^10     1024    2      6   0.9941          ∞      ∞
+     FRI-like n=2^20  1048576    2      6   1.0000          ∞      ∞
+
+--- n=36, k=2: list size bound vs agreement threshold t ---
+   t        δ    M_bound
+   7    0.806      16.62
+   8    0.778       9.00
+   9    0.750       6.40
+  10    0.722       5.06
+  11    0.694       4.24
+  12    0.667       3.67
+  13    0.639       3.25
+  14    0.611       2.92
+  15    0.583       2.67
+  16    0.556       2.45
+  17    0.528       2.28
+  18    0.500       2.12
+  19    0.472       1.99
+  20    0.444       1.88
+  21    0.417       1.78
+  22    0.389       1.69
+  23    0.361       1.61
+  24    0.333       1.53
+  25    0.306       1.47
+  26    0.278       1.41
+  27    0.250       1.35
+  28    0.222       1.30
+  29    0.194       1.25
+  30    0.167       1.21
+  31    0.139       1.17
+  32    0.111       1.13
+  33    0.083       1.09
+  34    0.056       1.06
+  35    0.028       1.03
+
+--- Threshold for M ≤ 1 (unique decoding boundary) ---
+  n=      36, k=2: unique decoding at t≥19, δ≤0.4722 (std bound: δ<0.4861)
+  n=      60, k=2: unique decoding at t≥31, δ≤0.4833 (std bound: δ<0.4917)
+  n=     100, k=2: unique decoding at t≥51, δ≤0.4900 (std bound: δ<0.4950)
+  n=    1000, k=2: unique decoding at t≥501, δ≤0.4990 (std bound: δ<0.4995)
+  n= 1048576, k=2: unique decoding at t≥524289, δ≤0.5000 (std bound: δ<0.5000)
+
+--- Exact Plotkin formula ---
+M ≤ (t - (k-1)) / (t²/n - (k-1)) when t² > n(k-1)
+For k=2: M ≤ (t-1) / (t²/n - 1)
+This equals 1 when t-1 = t²/n - 1, i.e., t(t-n) = 0, i.e., t=n (trivial) or t=0.
+Wait, that means M_bound > 1 for ALL 0 < t < n... 
+Let me recheck. M ≤ (t-1)/(t²/n - 1) for t²/n > 1, i.e., t > √n.
+At t=√n: M = (√n - 1)/(1 - 1) = ∞. Near t=√n, M is large.
+At t=n: M = (n-1)/(n-1) = 1.
+The bound decreases from ∞ to 1 as t goes from √n to n.
+
+For n=36, k=2:
+  t= 7: M ≤ 16.62
+  t= 8: M ≤ 9.00
+  t= 9: M ≤ 6.40
+  t=10: M ≤ 5.06
+  t=12: M ≤ 3.67
+  t=15: M ≤ 2.67
+  t=18: M ≤ 2.12
+  t=24: M ≤ 1.53
+  t=30: M ≤ 1.21
+  t=35: M ≤ 1.03

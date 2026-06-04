@@ -9,11 +9,21 @@ on:
 
 jobs:
   lean-build:
-    name: Lean 4 build (FRISoundness)
+    name: Lean 4 build (${{ matrix.lean_dir }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - lean_dir: paper1/lean
+            target: FRISoundness
+            sorry_dir: FRISoundness/
+          - lean_dir: lean
+            target: FRISoundness.Berlekamp
+            sorry_dir: FRISoundness/Berlekamp/
     defaults:
       run:
-        working-directory: paper1/lean
+        working-directory: ${{ matrix.lean_dir }}
     steps:
       - uses: actions/checkout@v4
 
@@ -32,9 +42,10 @@ jobs:
         uses: actions/cache@v4
         with:
           path: |
-            paper1/lean/.lake
-          key: lean-${{ runner.os }}-${{ hashFiles('paper1/lean/lean-toolchain', 'paper1/lean/lakefile.toml') }}
+            ${{ matrix.lean_dir }}/.lake
+          key: lean-${{ runner.os }}-${{ matrix.lean_dir }}-${{ hashFiles(format('{0}/lean-toolchain', matrix.lean_dir), format('{0}/lakefile.toml', matrix.lean_dir)) }}
           restore-keys: |
+            lean-${{ runner.os }}-${{ matrix.lean_dir }}-
             lean-${{ runner.os }}-
 
       - name: lake update + cache get
@@ -43,7 +54,7 @@ jobs:
           lake exe cache get || true
 
       - name: lake build
-        run: lake build
+        run: lake build ${{ matrix.target }}
 
       - name: Verify zero sorry in named theorems
         run: |
@@ -53,7 +64,7 @@ jobs:
           # NOTE: use grep -F here -- in GNU grep `\`` is the start-of-buffer
           # anchor, not a literal backtick, so a regex `\`sorry\`` would only
           # match a line that is exactly "sorry" and never filter docstrings.
-          hits=$(grep -RIn --include='*.lean' -E '\bsorry\b' FRISoundness/ \
+          hits=$(grep -RIn --include='*.lean' -E '\bsorry\b' ${{ matrix.sorry_dir }} \
                  | grep -vF '`sorry`' \
                  | grep -v -E '^[^:]+:[0-9]+:\s*--' \
                  || true)
@@ -62,12 +73,12 @@ jobs:
             echo "$hits"
             exit 1
           fi
-          echo "OK: no sorry in FRISoundness/"
+          echo "OK: no sorry in ${{ matrix.sorry_dir }}"
 
       - name: List axioms (informational)
         run: |
           echo "Axioms used (excluding standard logic):"
-          grep -RIn --include='*.lean' '^axiom ' FRISoundness/ || true
+          grep -RIn --include='*.lean' '^axiom ' ${{ matrix.sorry_dir }} || true
 
   python-scripts:
     name: Python verification scripts (sample)
@@ -88,3 +99,6 @@ jobs:
           python3 paper1/scripts/ca-bound/audit_critical_inequality.py
           python3 paper1/scripts/op1-barrier/op1_scaling.py
           python3 paper1/scripts/fri-coupling/audit_fri_coupling.py
+          python3 scripts/ca-bound/audit_critical_inequality.py
+          python3 scripts/op1-barrier/op1_scaling.py
+          python3 scripts/fri-coupling/audit_fri_coupling.py

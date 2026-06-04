@@ -1,0 +1,50 @@
+=== T2.1: #rich h1 analysis for (a,b)=(6,5), t=6 ===
+
+   n      p   lam  #rich_h1     M  max_per_h1   n/t  n/(t-1)
+----------------------------------------------------------------------
+  36     73     0         1     6           6     6      7.2
+      h1=0: 6 rich h0, max_pop=6
+  48     97     0         1     8           8     8      9.6
+      h1=0: 8 rich h0, max_pop=6
+  60    181     1        11    11           1    10     12.0
+      h1=1: 1 rich h0, max_pop=6
+      h1=7: 1 rich h0, max_pop=6
+      h1=19: 1 rich h0, max_pop=6
+      h1=26: 1 rich h0, max_pop=6
+      h1=48: 1 rich h0, max_pop=6
+  72    433     0         1    12          12    12     14.4
+      h1=0: 12 rich h0, max_pop=6
+  96    193     0         1    16          16    16     19.2
+      h1=0: 16 rich h0, max_pop=6
+ 120    241     1        24    24           1    20     24.0
+      h1=1: 1 rich h0, max_pop=6
+      h1=2: 1 rich h0, max_pop=6
+      h1=4: 1 rich h0, max_pop=6
+      h1=8: 1 rich h0, max_pop=6
+      h1=15: 1 rich h0, max_pop=6
+ 180    541     1        39    39           1    30     36.0
+ 240   1201     1        47    47           1    40     48.0
+ 360   1801     1        72    72           1    60     72.0
+
+--- Same for (a,b)=(7,6) ---
+   n      p   lam  #rich_h1     M  max_per_h1   n/t  n/(t-1)
+----------------------------------------------------------------------
+  36     73     0         6     6           1     6      7.2
+      h1=1: 1 rich h0, max_pop=6
+      h1=8: 1 rich h0, max_pop=6
+      h1=9: 1 rich h0, max_pop=6
+      h1=64: 1 rich h0, max_pop=6
+      h1=65: 1 rich h0, max_pop=6
+  60    181     0        10    10           1    10     12.0
+      h1=1: 1 rich h0, max_pop=6
+      h1=42: 1 rich h0, max_pop=6
+      h1=46: 1 rich h0, max_pop=6
+      h1=56: 1 rich h0, max_pop=6
+      h1=59: 1 rich h0, max_pop=6
+ 120    241     1        21    21           1    20     24.0
+      h1=1: 1 rich h0, max_pop=6
+      h1=6: 1 rich h0, max_pop=7
+      h1=25: 1 rich h0, max_pop=7
+      h1=36: 1 rich h0, max_pop=7
+      h1=40: 1 rich h0, max_pop=7
+ 240   1201     0        40    40           1    40     48.0

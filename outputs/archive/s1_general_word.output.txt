@@ -1,0 +1,34 @@
+=== General word test: n=36, k=2, threshold=6 ===
+
+--- p=37, (p-1)/n=1 ---
+  CS words (w = x^6 + λ*x^4):
+    total witnesses=60, non-aligned=36
+  Random words (w = random poly of degree < n):
+    200 trials: witnesses=107, non-aligned=107, max_agree=7
+  Structured words (w = x^a + λ*x^b, various a,b):
+    non-aligned hits across all (a,b,λ): 1008
+
+--- p=73, (p-1)/n=2 ---
+  CS words (w = x^6 + λ*x^4):
+    total witnesses=6, non-aligned=0
+  Random words (w = random poly of degree < n):
+    200 trials: witnesses=12, non-aligned=12, max_agree=7
+  Structured words (w = x^a + λ*x^b, various a,b):
+    non-aligned hits across all (a,b,λ): 396
+
+--- p=109, (p-1)/n=3 ---
+  CS words (w = x^6 + λ*x^4):
+    total witnesses=6, non-aligned=0
+  Random words (w = random poly of degree < n):
+    200 trials: witnesses=0, non-aligned=0, max_agree=0
+  Structured words (w = x^a + λ*x^b, various a,b):
+    non-aligned hits across all (a,b,λ): 252
+
+--- p=181, (p-1)/n=5 ---
+  CS words (w = x^6 + λ*x^4):
+    total witnesses=42, non-aligned=36
+  Random words (w = random poly of degree < n):
+    200 trials: witnesses=0, non-aligned=0, max_agree=0
+  Structured words (w = x^a + λ*x^b, various a,b):
+    non-aligned hits across all (a,b,λ): 288
+

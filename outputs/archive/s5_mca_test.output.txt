@@ -1,0 +1,63 @@
+=== S5: MCA test ===
+threshold t=6, k=2
+
+--- n=36, p=37, (p-1)/n=1 ---
+  Single word (6,4): max_M = 6
+  Single word (6,5): max_M = 6
+  Single word (7,6): max_M = 6
+
+  MCA M=2 tests:
+    CS+CS: 0 MCA pairs, max |D|=0
+    CS+(6,5): 6 MCA pairs, max |D|=6
+    (7,6)+(7,6): 1140 MCA pairs, max |D|=6
+
+--- n=36, p=73, (p-1)/n=2 ---
+  Single word (6,4): max_M = 6
+  Single word (6,5): max_M = 6
+  Single word (7,6): max_M = 6
+
+  MCA M=2 tests:
+    CS+CS: 0 MCA pairs, max |D|=0
+    CS+(6,5): 6 MCA pairs, max |D|=6
+    (7,6)+(7,6): 1140 MCA pairs, max |D|=6
+
+--- n=60, p=61, (p-1)/n=1 ---
+  Single word (6,4): max_M = 10
+  Single word (6,5): max_M = 12
+  Single word (7,6): max_M = 10
+
+  MCA M=2 tests:
+    CS+CS: 0 MCA pairs, max |D|=0
+    CS+(6,5): 10 MCA pairs, max |D|=6
+    (7,6)+(7,6): 1900 MCA pairs, max |D|=6
+
+--- n=60, p=181, (p-1)/n=3 ---
+  Single word (6,4): max_M = 10
+  Single word (6,5): max_M = 11
+  Single word (7,6): max_M = 10
+
+  MCA M=2 tests:
+    CS+CS: 0 MCA pairs, max |D|=0
+    CS+(6,5): 10 MCA pairs, max |D|=6
+    (7,6)+(7,6): 1900 MCA pairs, max |D|=6
+
+--- n=72, p=73, (p-1)/n=1 ---
+  Single word (6,4): max_M = 12
+  Single word (6,5): max_M = 12
+  Single word (7,6): max_M = 12
+
+  MCA M=2 tests:
+    CS+CS: 0 MCA pairs, max |D|=0
+    CS+(6,5): 12 MCA pairs, max |D|=6
+    (7,6)+(7,6): 2280 MCA pairs, max |D|=6
+
+--- n=96, p=97, (p-1)/n=1 ---
+  Single word (6,4): max_M = 18
+  Single word (6,5): max_M = 16
+  Single word (7,6): max_M = 18
+
+  MCA M=2 tests:
+    CS+CS: 0 MCA pairs, max |D|=0
+    CS+(6,5): 16 MCA pairs, max |D|=6
+    (7,6)+(7,6): 3040 MCA pairs, max |D|=6
+

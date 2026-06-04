@@ -1,0 +1,7 @@
+Large power-of-2 verification, t=6, k=2, word=(6,5)
+gcd(t-1, 2^k) = gcd(5, 2^k) = 1 for all k
+     n        p   #lam  max_M  predict
+----------------------------------------
+   256      769    100      2     O(1)
+   512     7681    100      0     O(1)
+  1024    12289    100      2     O(1)
