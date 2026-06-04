@@ -125,6 +125,51 @@ private lemma exists_witness
     Finset.exists_subset_card_eq hagree_card
   exact ⟨h, A, hC, hAcard, hAsub⟩
 
+/-- Same-set MCA badness for one scalar `γ`, in the finite threshold form used
+by the CA-ratio experiments: there is a codeword explaining
+`f₁ + γ·f₂` on a set `A` of size at least `|L| - w`, but no pair of codewords
+jointly explains `(f₁, f₂)` on that same set. -/
+def sameSetMCABad
+    (C : Submodule F (L → F))
+    (f₁ f₂ : L → F) (w : ℕ) (γ : F) : Prop :=
+  ∃ h ∈ C, ∃ A : Finset L,
+    card L ≤ A.card + w ∧
+    A ⊆ agreeSet (linComb f₁ f₂ γ) h ∧
+    ∀ g₁ ∈ C, ∀ g₂ ∈ C, ¬ A ⊆ jointAgreeSet f₁ f₂ g₁ g₂
+
+/-- CA badness is equivalent to same-set MCA badness under a stronger
+joint-distance premise.
+
+If `w_hd ≤ w_nt` and `(f₁, f₂)` is jointly farther than `w_nt` from `C × C`,
+then every CA witness at conclusion threshold `w_hd` is automatically a
+same-set MCA witness: any agreement set of size at least `|L|-w_hd` is also
+large enough to be excluded by the `w_nt` joint-distance premise. The reverse
+direction is immediate from the same-set MCA witness. -/
+theorem ca_bad_iff_sameSetMCABad_of_threshold_le
+    (C : Submodule F (L → F))
+    (f₁ f₂ : L → F) (w_nt w_hd : ℕ) (h_le : w_hd ≤ w_nt)
+    (hprem : ∀ g₁ ∈ C, ∀ g₂ ∈ C,
+      (jointAgreeSet f₁ f₂ g₁ g₂).card + w_nt < card L)
+    (γ : F) :
+    (∃ h ∈ C, card L ≤ (agreeSet (linComb f₁ f₂ γ) h).card + w_hd)
+      ↔ sameSetMCABad C f₁ f₂ w_hd γ := by
+  constructor
+  · intro hca
+    obtain ⟨h, hC, hcard⟩ := hca
+    refine ⟨h, hC, agreeSet (linComb f₁ f₂ γ) h, hcard, subset_rfl, ?_⟩
+    intro g₁ hg₁ g₂ hg₂ hsub
+    have hcard_le :
+        (agreeSet (linComb f₁ f₂ γ) h).card ≤
+          (jointAgreeSet f₁ f₂ g₁ g₂).card :=
+      Finset.card_le_card hsub
+    have hcontra := hprem g₁ hg₁ g₂ hg₂
+    omega
+  · intro hmca
+    obtain ⟨h, hC, A, hAcard, hAsub, _hnot_joint⟩ := hmca
+    have hcard_le : A.card ≤ (agreeSet (linComb f₁ f₂ γ) h).card :=
+      Finset.card_le_card hAsub
+    exact ⟨h, hC, by omega⟩
+
 /--
 **Equal-threshold CA upper bound** (paper `thm:eq-threshold-upper`).
 
